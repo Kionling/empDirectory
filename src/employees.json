@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Daniel Jauregui",
+        "phone": "(209)665-8323",
+        "department":"Engineering"
+    },
+    {
+        "id": 2,
+        "name": "Micaela Estavillo",
+        "phone": "(408)467-2131",
+        "department":"Manager"
+    },
+    {
+        "id": 3,
+        "name": "Dad Jauregui",
+        "phone": "(209)665-8321",
+        "department":"Engineer"
+    },
+    {
+        "id": 4,
+        "name": "Mom Velazquez",
+        "phone": "(209)665-8339",
+        "department":"Engineer"
+    },
+    {
+        "id": 5,
+        "name": "Luis Jauregui",
+        "phone": "(209)665-8324",
+        "department":"Cloud"
+    },
+    {
+        "id": 6,
+        "name": "Melvin Pineda",
+        "phone": "(510)394-2342",
+        "department":"Design"
+    },
+    {
+        "id": 7,
+        "name": "Gabriel Pineda",
+        "phone": "(510)341-9329",
+        "department":"Bum"
+    },
+    {
+        "id": 8,
+        "name": "Andres Jauregui",
+        "phone": "(209)665-3500",
+        "department":"Bum"
+    }
+]
