@@ -1,37 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 
 import SearchBar from "../components/search";
+import List from "../components/List"
 
 import employees from "../employees.json";
+import { render } from "@testing-library/react";
 
-function Workplace() {
-  const [sort, setSort] = useState({
-    name: true,
-    department: true,
-    phone: true,
+class App extends React.Component {
+   state = {
     employees: employees,
-  });
+}
 
-  const [state, dispatch] = useReducer((state, action) => {
-    switch (action.type) {
-      case "renderEmployees":
-        return [...employees];
-      case "search":
-        return employees.filter((employee) => {
-          return (
-            employee.name.includes(action.input),
-            employee.department.includes(action.input),
-            employee.phone.includes(action.input)
-          );
-        });
-    }
-  });
+//   const [state, dispatch] = useReducer((state, action) => {
+//     switch (action.type) {
+//       case "renderEmployees":
+//         return [...employees];
+//       case "search":
+//         return employees.filter((employee) => {
+//           return (
+//             employee.name.includes(action.input),
+//             employee.department.includes(action.input),
+//             employee.phone.includes(action.input)
+//           );
+//         });
+//     }
+//   });
 
   search = (event) => {
     const userInput = event.target.value;
     if (userInput === "") {
       this.setState({
-        employees: [...employees],
+        employees: this.state.employees,
       });
     } else {
       this.setState({
@@ -59,6 +58,21 @@ function Workplace() {
       }),
     });
   };
+  return(
+      <div>
+          <input onChange={this.search}></input>
+          {this.state.employees.map(emp => (
+              <List 
+              key={emp.id}
+              intialSetup={this.intialSetup}
+              name={emp.name}
+              phone={emp.phone}
+              department={emp.department}
+              />
+          ))}
+      </div>
+
+  )
 }
 
 export default Workplace;
