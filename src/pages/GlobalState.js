@@ -6,11 +6,14 @@ import employees from "../employees.json"
 
 
 function Workplace(){
-return(
     const [sort, setSort] = useState({  
         name: true, 
-        department: true
+        department: true,
+        phone: true
+
     })
+return(
+    
     
 
 
