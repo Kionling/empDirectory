@@ -5,8 +5,9 @@ import List from "../components/List"
 
 import employees from "../employees.json";
 import { render } from "@testing-library/react";
-
+//Extending a Component allows us to pass props to a user defined class when a constructor is not present like it is in the App class. We can also define functions like setState in Component which will then be inherited into any class that extends the Component.
 class App extends React.Component {
+//Here I'm creating a state that allows the user 
    state = {
     employees: employees,
     reset: employees
@@ -70,7 +71,7 @@ class App extends React.Component {
   
   return(
       <div>
-          <input onChange={this.search} className="search"></input>
+          <SearchBar /> 
           {this.state.employees.map(emp => (
               <List 
               key={emp.id}
