@@ -58,6 +58,9 @@ class App extends React.Component {
       }),
     });
   };
+  render(){
+
+  
   return(
       <div>
           <input onChange={this.search}></input>
@@ -71,8 +74,8 @@ class App extends React.Component {
               />
           ))}
       </div>
-
   )
+          }
 }
 
 export default Workplace;
