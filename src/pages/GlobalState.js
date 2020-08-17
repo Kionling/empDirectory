@@ -39,7 +39,7 @@ class App extends React.Component {
           if (employee.name.includes(userInput)) {
             return true;
           } else {
-            return false;
+            return false
           }
         }),
       });
@@ -69,7 +69,7 @@ class App extends React.Component {
   
   return(
       <div>
-          <input onChange={this.search}></input>
+          <input onChange={this.search} className="search"></input>
           {this.state.employees.map(emp => (
               <List 
               key={emp.id}
