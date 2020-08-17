@@ -15,9 +15,20 @@ function Workplace(){
 
     const [state, dispatch] = useReducer(
         (state, action) => {
-         switch (action.type)
+         switch (action.type) {
+            case "renderEmployees":
+                return [...employees]
+            case "search":
+                return employees.filter((employee) =>{
+                    return (
+                        employee.name.includes(action.input)
+                    )
+                })
+
+         }
+
         },
-        []
+        
       );
 
 
