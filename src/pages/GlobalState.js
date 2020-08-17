@@ -37,7 +37,7 @@ function Workplace() {
       this.setState({
         employees: this.state.employees.filter((employee) => {
           if (employees.name.includes(userInput)) {
-            return true;    
+            return true;
           } else {
             return false;
           }
@@ -47,8 +47,18 @@ function Workplace() {
   };
 
   intialSetup = (event) => {
-      
-  }
+    const employee = [...employees];
+    this.setState({
+      employees: employee.sort((a, b) => {
+        if (a.name < b.name) {
+          return 1;
+        }
+        if (a.name > b.name) {
+          return -1;
+        }
+      }),
+    });
+  };
 }
 
 export default Workplace;
