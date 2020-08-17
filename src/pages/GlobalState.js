@@ -21,7 +21,10 @@ function Workplace(){
             case "search":
                 return employees.filter((employee) =>{
                     return (
-                        employee.name.includes(action.input)
+                        employee.name.includes(action.input),
+                        employee.department.includes(action.input),
+                        employee.phone.includes(action.input)
+
                     )
                 })
 
@@ -30,6 +33,10 @@ function Workplace(){
         },
         
       );
+
+    search = (event) => {
+        const userInput = event.target.value
+    }
 
 
 
