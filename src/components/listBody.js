@@ -1,9 +1,14 @@
 import React from "react"
 
+const Styles ={
+    body: {
+
+    }
+}
 
 function ListBody(props){
     return(
-        <tbody>
+        <tbody className="container justify-content-center">
             <tr>
                 <th scope="row">
     <td>{props.name}</td>

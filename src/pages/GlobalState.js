@@ -71,7 +71,10 @@ class App extends React.Component {
   
   return(
       <div>
-          <SearchBar /> 
+          {/* <SearchBar search={this.search} /> 
+           */}
+
+           <input onChange={this.search}></input>
           {this.state.employees.map(emp => (
               <List 
               key={emp.id}
