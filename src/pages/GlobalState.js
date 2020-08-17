@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, {useEffect } from "react";
 
 import SearchBar from "../components/search";
 import List from "../components/List"
@@ -34,8 +34,9 @@ class App extends React.Component {
       });
     } else {
       this.setState({
-        employees: this.state.employees.filter((employee) => {
-          if (employees.name.includes(userInput)) {
+        employees: this.state.employees.filter(employee => {
+            console.log(userInput)
+          if (employee.name.includes(userInput)) {
             return true;
           } else {
             return false;
@@ -46,7 +47,7 @@ class App extends React.Component {
   };
 
   intialSetup = (event) => {
-    const employee = [...employees];
+    const employee = this.state.employees;
     this.setState({
       employees: employee.sort((a, b) => {
         if (a.name < b.name) {
@@ -58,6 +59,11 @@ class App extends React.Component {
       }),
     });
   };
+
+//   useEffect = () => {
+//       {employees: employees}
+//   }
+  
   render(){
 
   
@@ -78,4 +84,4 @@ class App extends React.Component {
           }
 }
 
-export default Workplace;
+export default App;
