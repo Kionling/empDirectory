@@ -9,6 +9,7 @@ import { render } from "@testing-library/react";
 class App extends React.Component {
    state = {
     employees: employees,
+    reset: employees
 }
 
 //   const [state, dispatch] = useReducer((state, action) => {
@@ -30,7 +31,7 @@ class App extends React.Component {
     const userInput = event.target.value;
     if (userInput === "") {
       this.setState({
-        employees: this.state.employees,
+        employees: this.state.reset,
       });
     } else {
       this.setState({
